@@ -1,0 +1,16 @@
+# Datos de entrada y resultados permanecen locales.
+*.csv
+*.pdf
+*.ppt
+*.pptx
+.DS_Store
+.Rhistory
+.RData
+.Ruserdata
+.Rproj.user/
+.env
+.env.*
+!.env.example
+__pycache__/
+.venv/
+
