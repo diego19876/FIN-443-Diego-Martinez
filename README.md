@@ -1,6 +1,8 @@
 # Programación en Finanzas — FIN443, UAI 2026
 
 Repositorio personal de Diego Martinez: código, pautas y avances semanales.
+Repositorio de GitHub: https://github.com/diego19876/FIN-443-Diego-Martinez.
+El Desafío 3 se desarrollará en este mismo repositorio, junto con los avances del curso.
 Los datos originales, los resultados generados y los PDF de clases permanecen fuera del repositorio.
 
 ## Contenido
