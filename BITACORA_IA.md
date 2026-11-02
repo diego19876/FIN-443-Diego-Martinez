@@ -63,3 +63,23 @@ Tras comparar la bibliografía de compañeros, se seleccionaron otros tres artí
 
 Agregar una entrada por clase, sin reemplazar las anteriores: contexto y pedido de Diego; prompts resumidos o textuales identificados; contribución de la IA; decisiones y cambios en archivos; pruebas y resultados observados; errores encontrados y correcciones; pendientes. Si un programa cambia, indicar qué se modificó. No declarar una revisión o defensa humana que no conste en la conversación.
 
+## Desafío 3 implementado — 02-11-2026
+
+**Solicitud.** Diego aportó el enunciado completo, las plantillas R y Python, los precios y la prueba pública para desarrollar el desafío en este mismo repositorio. Se mantuvo R como lenguaje de entrega.
+
+**Contribución de la IA.** Se leyó el contrato y se implementó `desafio3.R`, reutilizando el lector del Desafío 2 revisado con la pauta. Se calcularon las cinco carteras IS, los cuatro juegos de pesos BT1 y cuatro estrategias BT. MinVar y la tangente permiten cortos según las fórmulas del enunciado. ERC se resolvió por descenso cíclico de coordenadas sobre el objetivo convexo. Se prepararon un informe de dos páginas y respuestas para el formulario.
+
+**Decisiones verificables.** Los retornos se calcularon antes de filtrar casos completos. Los cierres de mes se identificaron sobre las fechas de R; la ventana incluye el cierre y los pesos empiezan a operar al día siguiente. No se rebalancea el último día de R. Los costos incluyen la compra inicial desde caja y se descuentan del primer retorno del período. La rotación se calcula respecto de pesos objetivo, sin deriva y sin dividir por dos. El cálculo de MDD incluye W0 = 1. El CSV mantiene fracciones y no redondea los resultados.
+
+**Hallazgos.** Archivo público: 1.305 filas, 1.303 fechas únicas, dos duplicados, cinco faltantes de ELECTRICA y un split 2:1 de RETAIL del 08-04-2024. Matriz final: 1.302 retornos completos. Primer rebalanceo: 31-12-2021, 48 rebalanceos. Se generaron 40 filas en pesos.csv y nueve en metricas.csv.
+
+**Pruebas ejecutadas.** La prueba pública exacta del profesor pasó sus 14 comprobaciones. El contraste independiente en `tests/verificar_desafio3.py` utilizó NumPy y un algoritmo Newton para ERC distinto del R; se reprodujeron todos los pesos y métricas del archivo público tanto con rf = 0,05 como con 0,03, con diferencia máxima menor que 4e-12. Se verificaron transformación al formato internacional, inversión de filas, duplicados adicionales y nombres con espacios y tildes. Se probó otro conjunto simulado de tres activos con inicio tardío, faltantes y dos splits del mismo activo. Al truncar el archivo al 05-01-2022, los pesos BT1 no cambiaron: no dependen del futuro eliminado. No se han ejecutado los archivos ocultos del profesor.
+
+**Resultados para el formulario.** Peso ELECTRICA IS_MINVAR: 50,45 %; Sharpe IS_MAXSHARPE: 1,029; CAGR BT_MINVAR: 14,51 %; Sharpe BT_EW: 0,877; Sharpe BT_INVVOL: 0,866; Sharpe BT_ERC: 0,860; caída máxima BT_MINVAR: 14,64 %; Sharpe neto BT_MINVAR: 0,663.
+
+**Interpretación y límites.** Ninguna de las cuatro estrategias con BT pierde Sharpe frente a su IS en este archivo. El informe lo explica sin forzar la idea de que BT siempre empeora: los períodos difieren y también cambia la estimación. No se usa shrinkage ni restricciones adicionales para alterar las fórmulas exigidas. Se documenta la decisión condicional de elegir ERC para un cliente que prioriza balancear riesgo, distinguiéndola de EW como mejor Sharpe neto observado.
+
+**Referencias y PDF.** Se consiguieron copias de los tres artículos previamente verificados en Scholar. Ledoit y Wolf es la versión publicada; Chaves y DeMiguel son versiones de trabajo del mismo artículo, con fechas julio de 2012 y septiembre de 2008. Se identifican esas versiones en el informe y en `referencias_desafio3.md`. Se revisaron sus resúmenes y pasajes pertinentes. Los sitios originales bloquearon varias descargas; se recurrió a copias universitarias y a las versiones archivadas que enlaza Google Scholar. No se reconstruyeron ni inventaron los artículos. Los PDF permanecen como adjuntos locales, fuera del repositorio público.
+
+**Entrega y pendientes.** El código y documentos fuente se incorporan al mismo repositorio FIN-443-Diego-Martinez. La carpeta local `entrega_desafio3/` reúne el script, el informe y los tres PDF. El formulario y Webcursos no se enviaron automáticamente; Diego debe ingresar RUT y código de sesión, revisar el informe y subir los archivos.
+
