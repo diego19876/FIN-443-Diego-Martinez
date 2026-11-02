@@ -53,5 +53,11 @@ Se conservan por separado la solución propia, las pruebas y las pautas del prof
 
 ## Cómo registrar las clases siguientes
 
+### Actualización del 02-11-2026 — Repositorio y bibliografía
+
+Diego pidió renombrar el repositorio a `FIN-443-Diego-Martinez` y desarrollar el Desafío 3 en el repositorio del curso. Esta instrucción reemplaza la preferencia anterior de usar dos repositorios. Se conservan el código, las pautas y el historial existentes.
+
+Tras comparar la bibliografía de compañeros, se seleccionaron otros tres artículos: DeMiguel, Garlappi, Nogales y Uppal (2009), “A generalized approach to portfolio optimization”; Chaves, Hsu, Li y Shakernia (2012), “Efficient algorithms for computing risk parity portfolio weights”; y Ledoit y Wolf (2003), “Improved estimation of the covariance matrix of stock returns with an application to portfolio selection”. Se verificaron los metadatos en fuentes académicas y se revisaron los resúmenes y textos disponibles. Finalmente se buscaron los tres títulos exactos en Google Scholar mediante Chrome y se confirmó que los tres aparecen, con sus autores y años. Esto confirma su indexación; no equivale a reproducir todos sus experimentos. Pendiente: reunir los PDF y respaldar con ellos afirmaciones concretas del informe.
+
 Agregar una entrada por clase, sin reemplazar las anteriores: contexto y pedido de Diego; prompts resumidos o textuales identificados; contribución de la IA; decisiones y cambios en archivos; pruebas y resultados observados; errores encontrados y correcciones; pendientes. Si un programa cambia, indicar qué se modificó. No declarar una revisión o defensa humana que no conste en la conversación.
 
