@@ -83,3 +83,7 @@ Agregar una entrada por clase, sin reemplazar las anteriores: contexto y pedido 
 
 **Entrega y pendientes.** El código y documentos fuente se incorporan al mismo repositorio FIN-443-Diego-Martinez. La carpeta local `entrega_desafio3/` reúne el script, el informe y los tres PDF. El formulario y Webcursos no se enviaron automáticamente; Diego debe ingresar RUT y código de sesión, revisar el informe y subir los archivos.
 
+### Auditoría reforzada solicitada por Diego — 02-11-2026
+
+Diego pidió revisar el cumplimiento del enunciado y las trampas advertidas, especialmente mirar el futuro, y redactar las respuestas y prompts para el formulario. Se releyó el enunciado, se inspeccionó el código y se repitieron la prueba pública y la validación independiente, sin fallas ni cambios en cifras. Se añadió `tests/verificar_lookahead3.R`: trunca los datos después de cada uno de los 48 rebalanceos y compara todos los pesos y retornos brutos y netos anteriores. Las diferencias máximas fueron exactamente 0. También altera todos los precios posteriores al 30-11-2023 y verifica que los 24 rebalanceos previos y sus retornos realizados no cambien. Se comprueba que los costos aparezcan únicamente en el primer retorno del período, incluida la compra inicial desde caja, y que la rotación EW posterior sea 0. Todas las comprobaciones pasaron. No fue necesario modificar `desafio3.R`; se actualizó el texto del formulario en RESPUESTAS_DESAFIO3.md. Límite: evidencia sobre estos datos y pruebas; los archivos ocultos no están disponibles.
+
