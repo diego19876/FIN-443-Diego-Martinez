@@ -1,5 +1,7 @@
 # Clase 3 — Comparación con la pauta
 
+Organización acordada: desarrollar el Desafío 3 dentro de `diego19876/FIN-443-Diego-Martinez`, el mismo repositorio del curso. No se creará un repositorio independiente para este desafío.
+
 Se ejecutó la pauta comentada del profesor y la solución propia con `precios_desafio2.csv` y rf = 0,03. La diferencia máxima entre todas las métricas fue 0. El Sharpe de CARTERA_EW fue -0,252510271473252, equivalente a -0,253 con tres decimales.
 
 Se amplió el lector propio para probar las fechas en formatos `%d-%m-%Y`, `%Y-%m-%d` y `%d/%m/%Y`, siguiendo la pauta. Después del cambio, el programa volvió a pasar la prueba pública.
