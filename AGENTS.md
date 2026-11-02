@@ -2,6 +2,8 @@
 
 Lee README.md, BITACORA_IA.md y los avances antes de modificar el código.
 
+Repositorio principal: `diego19876/FIN-443-Diego-Martinez`. El Desafío 3 se implementará aquí. Esta decisión reemplaza la solicitud anterior de crear un repositorio separado.
+
 - En cada tarea de clase completada en este repositorio, actualiza BITACORA_IA.md y avance_clase_XX.md. Registra los pedidos, contribución de IA, cambios, evidencia de verificación, límites y pendientes.
 - No inventes resultados, datos, referencias, pruebas ejecutadas ni decisiones del alumno. Identifica los prompts reconstruidos como resúmenes.
 - Conserva argumentos de terminal y contratos de archivos del enunciado vigente. Usa rutas relativas. No cambies rf a un valor fijo.
