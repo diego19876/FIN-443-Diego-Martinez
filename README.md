@@ -8,6 +8,12 @@ Los datos originales, los resultados generados y los PDF de clases permanecen fu
 ## Contenido
 
 - `desafio2.R`: solución del lector de precios y métricas, con R base.
+- `desafio3.R`: carteras IS, pesos BT1, backtest mensual y costos, con R base.
+- `probar_mi_entrega3.R`: prueba pública del profesor para el Desafío 3.
+- `tests/verificar_desafio3.py`: contraste independiente con NumPy y pruebas de robustez.
+- `informe_desafio3.md`: fuente del informe de dos páginas.
+- `RESPUESTAS_DESAFIO3.md`: ocho cifras y texto para el formulario.
+- `referencias_desafio3.md`: procedencia y versiones de los tres artículos.
 - `probar_mi_entrega.R`: prueba pública de formato proporcionada por el profesor.
 - `pauta_desafio2_comentada.R`: pauta comentada del profesor, publicada en la Clase 3.
 - `avance_clase_XX.md`: avances de cada clase.
@@ -34,5 +40,18 @@ El lector acepta los formatos internacional y chileno. Ordena fechas, elimina du
 
 ## Estado
 
-Desafío 2 implementado y verificado con el archivo público y pruebas adicionales. Comparación con la pauta a `rf = 0.03`: diferencia máxima entre métricas igual a cero. El código del Desafío 3 aún no está implementado en este repositorio.
+Desafíos 2 y 3 implementados. El Desafío 3 pasó las 14 comprobaciones públicas; una implementación independiente en NumPy reprodujo pesos y métricas con diferencia máxima menor que 4e-12. Los archivos ocultos del profesor no están disponibles.
+
+## Ejecutar el desafío 3
+
+Colocar el CSV original en la raíz, conservándolo fuera de Git:
+
+```sh
+Rscript desafio3.R precios_desafio3.csv salida_desafio3
+Rscript desafio3.R precios_desafio3.csv salida_desafio3_rf03 0.03
+Rscript probar_mi_entrega3.R
+python tests/verificar_desafio3.py precios_desafio3.csv
+```
+
+El programa a entregar depende solo de R base. La validación independiente requiere Python y NumPy. El informe se genera con `python scripts/generar_informe_desafio3.py` (ReportLab) a partir de su fuente Markdown, después de ejecutar el programa. Los archivos finales para Webcursos se guardan localmente en `entrega_desafio3/`; los datos, CSV generados y PDF no se publican en GitHub.
 
