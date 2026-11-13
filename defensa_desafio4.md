@@ -1,0 +1,7 @@
+# Desafío 4 · Guía de defensa
+
+1. Ejecuta `python3 desafio4.py` en la carpeta con los siete CSV del enunciado y tu `cartera.csv`. El programa escribe `riesgo.csv`, `calidad_datos.csv` y `backtest.csv`. Usa NumPy y pandas.
+2. Explica el cambio de ticker de EMI4368. WKWZ cierra en 45,4380 USD el 15 de julio de 2019 y CTOF en 44,4940 USD al día siguiente. Ambos nombres corresponden al mismo emisor según el maestro, de modo que el retorno es 44,4940 / 45,4380 − 1, igual a −2,08 %.
+3. Explica el split de JFAS. Multiplicas el cierre de 243,6510 USD por 3 para compararlo con 739,2590 USD. El retorno es −1,12 %. Omitir el ajuste da una caída aparente de −67,04 %. Para Santiago conviertes a USD con el último tipo de cambio conocido en la fecha de cada cierre.
+4. Explica cómo se evita mirar el futuro. El VaR histórico del día t usa las 250 pérdidas anteriores. RiskMetrics y GARCH actualizan su varianza con el retorno del día anterior. FHS requiere 250 pérdidas ya estandarizadas, por eso empieza más tarde. El incumplimiento ocurre cuando la pérdida observada supera el VaR pronosticado.
+5. Defiende la decisión. En 2.481 fechas comunes, el histórico tuvo 32 incumplimientos, con p = 0,165 en Kupiec y p = 0,280 en cobertura condicional. Su VaR cambió en promedio 0,33 puntos base diarios. GARCH tuvo 30 incumplimientos y cambió 8,66 puntos base en promedio. El Z2 de 0,296 del histórico advierte que el ES puede subestimar la severidad. Antes de adoptar el límite, revisarías esa cola y el desempeño por régimen.
