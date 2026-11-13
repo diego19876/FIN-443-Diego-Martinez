@@ -37,43 +37,34 @@ leer_precios <- function(archivo) {
   d[[1]] <- fechas
   d <- d[order(d[[1]]), , drop = FALSE]
   d <- d[!duplicated(d[[1]]), , drop = FALSE]
-  if (nrow(d) < 2) stop("Se requieren al menos dos fechas distintas.")
   for (j in seq.int(2, ncol(d))) {
     p <- d[[j]]
     if (all(is.na(p))) stop(paste("Activo sin precios:", names(d)[j]))
     if (!is.numeric(p) || any(!is.finite(p[!is.na(p)])) ||
         any(p <= 0, na.rm = TRUE)) stop("Los precios deben ser positivos.")
+    disponibles <- which(!is.na(p))
+    if (length(disponibles) >= 2) {
+      for (i in seq.int(2, length(disponibles))) {
+        t <- disponibles[i]
+        cociente <- p[t] / p[disponibles[i - 1]]
+        ks <- (2:5)[abs(cociente * (2:5) - 1) <= 0.05 + 1e-12]
+        if (length(ks)) p[seq_len(t - 1)] <- p[seq_len(t - 1)] / ks[1]
+      }
+    }
+    for (i in seq.int(2, length(p))) if (is.na(p[i])) p[i] <- p[i - 1]
+    d[[j]] <- p
   }
   rownames(d) <- NULL
   d
 }
-
-retornos_por_activo <- function(p, tol = 0.05) {
-  # Identificar el split con precios observados, antes de rellenar huecos.
-  observados <- which(!is.na(p))
-  factores <- rep(1, length(p))
-  if (length(observados) >= 2) {
-    actual <- observados[-1]
-    cociente <- p[actual] / p[observados[-length(observados)]]
-    for (k in 2:5) {
-      coincide <- abs(cociente * k - 1) <= tol + 1e-12
-      aplicar <- actual[coincide & factores[actual] == 1]
-      factores[aplicar] <- k
-    }
-  }
-  for (i in seq.int(2, length(p))) if (is.na(p[i])) p[i] <- p[i - 1]
-  # Ajustar el cociente solo al observar el nuevo precio. La reescala de
-  # precios anteriores se cancela en sus propios cocientes.
-  p[-1] / p[-length(p)] * factores[-1] - 1
-}
-
 if (!is.finite(rf)) stop("rf debe ser una tasa anual numérica.")
 datos <- leer_precios(entrada)
 activos <- names(datos)[-1]
 
 # ---- 2. Retornos diarios en los días en que TODOS los activos tienen dato ---
 # Se calculan retornos ANTES de filtrar casos completos.
-R <- vapply(datos[activos], retornos_por_activo, numeric(nrow(datos) - 1))
+P <- as.matrix(datos[, -1, drop = FALSE])
+R <- P[-1, , drop = FALSE] / P[-nrow(P), , drop = FALSE] - 1
 fechas <- datos[[1]][-1]
 completos <- complete.cases(R)
 R <- R[completos, , drop = FALSE]
