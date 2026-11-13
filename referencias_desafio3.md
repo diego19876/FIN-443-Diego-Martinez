@@ -1,6 +1,6 @@
 # Referencias y copias del Desafío 3
 
-Los tres títulos fueron contrastados en Google Scholar y en fuentes editoriales o académicas. No aparecen en la lista de compañeros compartida ni en la bibliografía de las láminas de la Clase 3 revisadas.
+Con ayuda de Codex, contrasté los tres títulos en Google Scholar y en fuentes editoriales o académicas. No aparecen en la lista de compañeros compartida ni en la bibliografía de las láminas de la Clase 3 revisadas.
 
 ## DeMiguel, Garlappi, Nogales y Uppal
 
@@ -10,7 +10,7 @@ Copia local: `entrega_desafio3/DeMiguel_2009.pdf`. Versión de trabajo de 24-09-
 
 https://scholar.archive.org/work/jlu5i4ea7bgzjfueckkwipzd4e/access/wayback/http://www.usc.edu/schools/business/FBE/seminars/papers/F_11-14-08_UPPAL-DGNU.pdf
 
-Uso en el informe: error de estimación, restricciones sobre los pesos y desempeño fuera de muestra. No se implementan esas restricciones adicionales, porque el enunciado exige fórmulas sin restricción de ventas cortas.
+En mi informe usé este artículo para explicar el error de estimación, las restricciones sobre los pesos y el desempeño fuera de muestra. El enunciado exige fórmulas sin restricción de ventas cortas, así que mantuve esas fórmulas en mi programa.
 
 ## Chaves, Hsu, Li y Shakernia
 
@@ -20,7 +20,7 @@ Copia local: `entrega_desafio3/Chaves_2012.pdf`. Versión de trabajo de julio de
 
 https://scholar.archive.org/work/xk2eug5btvgibep7q74j6c7xfu/access/wayback/http://www.top1000funds.com:80/wp-content/uploads/2012/08/Efficient-algorithms-for-computing-risk-parity-portfolio-weights.pdf
 
-Uso: diferencia entre inversa de volatilidad y contribuciones iguales al riesgo incorporando covarianzas. El artículo no establece superioridad universal de ERC.
+Usé este artículo para explicar la diferencia entre inversa de volatilidad y contribuciones iguales al riesgo incorporando covarianzas. El artículo no establece superioridad universal de ERC.
 
 ## Ledoit y Wolf
 
@@ -30,6 +30,6 @@ Copia local: `entrega_desafio3/Ledoit_Wolf_2003.pdf`. Versión publicada, 19 pá
 
 https://www.econ.uzh.ch/dam/jcr:ffffffff-935a-b0d6-ffff-ffff9961f70f/jef.pdf
 
-Uso: incertidumbre de la covarianza muestral y motivación del shrinkage. El programa del ejercicio usa la covarianza muestral exigida; no se atribuyen al ejercicio resultados de un estimador distinto.
+Usé este artículo para explicar la incertidumbre de la covarianza muestral y la motivación del shrinkage. Para los resultados de mi ejercicio usé la covarianza muestral exigida por el enunciado.
 
-Los PDF son adjuntos locales para la entrega académica. No se suben los artículos completos al repositorio público.
+Guardo los PDF localmente como adjuntos para mi entrega académica.
