@@ -27,3 +27,6 @@ El primer rebalanceo fue el 31-12-2021 y hubo 48. Truncar después de esa fecha,
 
 Se preparó un informe de dos páginas con referencias citadas en contexto. Los tres PDF están disponibles localmente; las versiones de trabajo de DeMiguel y Chaves están identificadas como tales. Las respuestas del formulario están en RESPUESTAS_DESAFIO3.md. Pendiente humano: revisar el informe y entregar en formulario y Webcursos. Los archivos ocultos del profesor no están disponibles.
 
+## Revisión con la pauta del propio Desafío 3 — 13-11-2026
+
+Se compararon los ocho grupos de pesos y las nueve filas de métricas con la pauta del profesor, a rf anual de 5 % y 3 %. La diferencia máxima observada entre las soluciones fue 3,34e-12. Se mejoró la pieza propia aplicando el factor de split al retorno de la fecha correspondiente, a partir de precios observados, en lugar de reescalar todos los niveles anteriores. La versión nueva reproduce las cifras anteriores y pasó la prueba pública, el contraste NumPy y las pruebas de causalidad de los 48 rebalanceos. La pauta se conserva por separado.
