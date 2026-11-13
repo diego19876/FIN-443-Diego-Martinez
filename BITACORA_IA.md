@@ -94,3 +94,35 @@ Diego pidió contrastar el código propio con la pauta de la semana anterior y m
 Se separó la lectura de los precios del cálculo de los retornos. El código propio detecta splits entre observaciones y aplica el factor al cociente del día en que aparece el nuevo precio. Es equivalente a reescalar los niveles anteriores y evita recorrer todo el historial por cada split. Se añadió una validación de fechas distintas tras quitar duplicados. Los CSV de la versión anterior y la nueva tuvieron diferencia numérica cero con ambas tasas. Pasaron las 14 comprobaciones públicas, el contraste independiente con NumPy, la prueba sintética con inicio tardío, faltantes y dos splits, y las pruebas de prefijos y costos de los 48 rebalanceos. Los datos ocultos siguen sin estar disponibles.
 
 La entrega original de la semana anterior permanece en `desafio3.R`. La revisión propia con la pauta se conserva en `desafio3_corregido.R` y usa los mismos argumentos. Esta revisión sirve como base para el trabajo acumulativo.
+
+## Desafío 4 — 13-11-2026
+
+Diego compartió el enunciado, las fuentes públicas, las plantillas y la prueba de contrato. Se recuperaron del CSV asignado sus 20 posiciones y se implementó el lector regional y el cálculo de riesgo en Python. Se conserva el calendario unión, el orden de versiones y la vigencia de ticker. El índice equipondera retornos observados y eventos de salida. Se usaron ventanas estrictamente anteriores para los cinco VaR.
+
+**Comprobaciones.** Ejecución directa con 17.305.011 filas en 19 s. Los cortes de la serie en 800 y 1.500 días reprodujeron exactamente el prefijo del backtest. Se cuantificaron cuatro escenarios aislados de limpieza y se compararon cinco modelos sobre fechas comunes. Se preparó memo y una referencia verificada.
+
+**Webcursos.** Se inspeccionó el foro de 95 discusiones a solicitud de Diego. No apareció el DOI de Giacomini y White (2006), cuya versión publicada se verificó. La referencia aún debe registrarse en el foro. Quedan cuatro referencias y los datos ocultos no están disponibles.
+
+La prueba del profesor copiada de la plantilla pasó todos los controles, incluida la ejecución con alfa 0,95. Los controles públicos no certifican los valores esperados en archivos ocultos.
+
+### Revisión contra la rúbrica del Desafío 4
+
+Diego solicitó corregir y revisar la entrega completa. Se añadió la continuidad de precios por emisor cuando cambia de bolsa y se ejecutó una prueba independiente con otro mercado pequeño y sus filas invertidas. Se verificaron a mano las cifras del cambio de ticker y del split y se amplió el memo a dos páginas con estos ejemplos, la comparación por pérdida cuantílica asimétrica y los límites de la recomendación. Se inspeccionó el PDF renderizado.
+
+Se cotejaron los cinco DOI, sus PDF y las páginas que respaldan las decisiones. Los cuartiles Q1 provienen de la tabla de WoS/JCR 2024 por categoría. En 101 discusiones de Webcursos figuraba una publicación de Giacomini y White de Diego, con la cita en el asunto. Los otros cuatro DOI no figuraban en la revisión. Se dejaron cinco textos listos para copiar. El estudiante debe ajustar el primer asunto al DOI y registrar los otros cuatro. Los archivos oficiales ocultos siguen sin estar disponibles.
+
+En la revisión final, el script pasó todos los controles de la prueba pública en la ejecución principal (18 s). El bloque de alfa 0,95 de la prueba no pudo copiar 541 MB por falta de espacio. Se reprodujo ese bloque con el mismo código del ZIP, una copia pequeña de los parámetros y enlaces a los datos originales. El VaR histórico bajó de 2,179 % a 1,357 % y el retorno acumulado y beta quedaron idénticos. El ZIP contiene los nueve archivos de la tarea y pasó su prueba de integridad.
+
+### Verificación detallada de las reglas del Desafío 4
+
+Se cotejó el script del ZIP con las ocho reglas de datos y las nueve de riesgo. Se ejecutó la prueba independiente del mercado pequeño, con el orden de filas invertido. Incluye vigencia de tickers, corrección de precios, FX anterior, feriados, retorno terminal y promedio equiponderado de emisores con retorno. Sobre las series públicas de la cartera y el mercado reconstruidas desde los CSV, se recalcularon las 31 métricas y todas las columnas del backtest en R base, con cuantil tipo 7 y p-valores de chi cuadrado. La diferencia máxima en métricas fue 4,55e-13. Este contraste valida la capa de riesgo a partir de las series reconstruidas. El caso pequeño con retornos calculados a mano aporta la comprobación independiente de la capa de datos.
+
+Se verificó el contrato exacto desde el ZIP en una carpeta limpia, con los siete CSV y la cartera de 20 filas, sin argumentos. La ejecución tardó 16,8 s. Se cotejaron el orden de las 31 métricas, los 9 indicadores y las 13 columnas del backtest. Los 250 primeros pares FHS quedaron vacíos, los 2.481 restantes completos, y los incumplimientos coincidieron con la comparación estricta pérdida > VaR y con el resumen. Los tres CSV coincidieron byte por byte con los de la carpeta local y no se necesitó modificar el código.
+
+### Autoevaluación con la rúbrica del Desafío 4
+
+Se revisaron los nueve archivos del ZIP y la evidencia de las pruebas pública, independiente en R y con un mercado sintético. El memo satisface el límite de dos páginas y cuantifica cuatro omisiones, con una recomendación de VaR histórico sustentada por cobertura y estabilidad. Se revisaron las 102 discusiones del foro. Solo Giacomini y White figuraba bajo la cuenta de Diego, con la cita completa como asunto. Queda pendiente usar el DOI como asunto y registrar las otras cuatro referencias. El punto máximo también depende de los datos ocultos y de la defensa individual.
+
+### Continuidad del Desafío 4 en GitHub
+
+Diego pidió incorporar al repositorio el código y la documentación del Desafío 4 como base de los desafíos 5 y 6. Se documentó la importación de construir_series, el calendario, la moneda y el corte de muestra. Se cotejó el código con el ZIP de entrega, se repitió la prueba del mercado alternativo y se generó el memo desde una carpeta limpia. La entrega individual y los archivos de datos permanecen locales. Los contratos de los próximos desafíos se definirán según sus propios enunciados.
