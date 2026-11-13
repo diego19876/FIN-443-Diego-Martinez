@@ -4,7 +4,7 @@ Diego Martinez · FIN443 · UAI 2026 · 2 de noviembre de 2026
 
 ## Datos, método y resultados
 
-Se usó precios_desafio3.csv con cinco activos y rf anual de 5 %. La limpieza eliminó dos fechas duplicadas, ajustó el split 2:1 de RETAIL del 08-04-2024 y rellenó cinco faltantes de ELECTRICA con el último precio disponible. Quedaron 1.302 retornos simples completos. El análisis dentro de muestra (IS) usa del 05-01-2021 al 31-12-2025. El backtest (BT) estima con 252 observaciones hasta cada cierre de mes, aplica los pesos desde el día siguiente y mantiene pesos objetivo diarios dentro del período. El primer rebalanceo fue el 31-12-2021; hubo 48 y no se rebalanceó en el último día del archivo.
+Para mi análisis usé precios_desafio3.csv con cinco activos y una tasa libre de riesgo anual de 5 %. La limpieza eliminó dos fechas duplicadas, ajustó el split 2:1 de RETAIL del 08-04-2024 y rellenó cinco faltantes de ELECTRICA con el último precio disponible. Quedaron 1.302 retornos simples completos. El análisis dentro de muestra (IS) usa del 05-01-2021 al 31-12-2025. El backtest (BT) estima con 252 observaciones hasta cada cierre de mes, aplica los pesos desde el día siguiente y mantiene pesos objetivo diarios dentro del período. El primer rebalanceo fue el 31-12-2021; hubo 48 y no se rebalanceó en el último día del archivo.
 
 Los porcentajes siguientes están redondeados a dos decimales; los Sharpe, a tres. La rotación es el promedio de la suma absoluta de cambios de pesos, sin dividir por dos y sin incluir la compra inicial. CAGR, volatilidad y caída máxima se calculan sin costos. El Sharpe neto incluye 0,1 % por unidad transada, incluida la compra inicial desde caja.
 
