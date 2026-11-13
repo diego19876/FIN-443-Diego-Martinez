@@ -2,7 +2,7 @@
 
 **Para el Comité de Riesgo · Diego Martinez · FIN443**
 
-**Decisión propuesta.** Usar provisionalmente el VaR histórico al 99 % con 250 días para el límite diario. Es el modelo con menor cambio absoluto diario medio entre los cinco en las 2.481 fechas comparables. Su cobertura no se rechaza al 5 % y se puede explicar con las pérdidas observadas. El último límite para el día siguiente es 1,537 %. La calibración de la severidad es una tarea aparte.
+**Decisión propuesta.** Propongo usar provisionalmente el VaR histórico al 99 % con 250 días para el límite diario. Es el modelo con menor cambio absoluto diario medio entre los cinco en las 2.481 fechas comparables. Su cobertura no se rechaza al 5 % y se puede explicar con las pérdidas observadas. El último límite para el día siguiente es 1,537 %. La calibración de la severidad es una tarea aparte.
 
 ## Bitácora de datos
 
@@ -18,7 +18,7 @@ Leí 10.389.384 filas de Santiago y 6.915.627 de Nueva York. Inspeccioné encabe
 
 Los días afectados cuentan cambios de retorno superiores a 1e-12. Ignorar las salidas significa conservar filas posteriores y omitir el retorno final. Calcular sin conversión mezcla retornos locales y en USD y aquí solo sirve como contraste. En la muestra, el índice equiponderado de todos los emisores acumuló 453,21 %. La cartera tuvo beta 0,948 y VaR activo de 1,039 %.
 
-La conversión usa una unidad común, como la comparación en dólares de Jorion y Goetzmann (1999, p. 959). Conservar la historia previa a la salida evita seleccionar solo supervivientes, un problema documentado por Brown et al. (1992, p. 553).
+Convertí los retornos a una unidad común, como la comparación en dólares de Jorion y Goetzmann (1999, p. 959). Conservé la historia previa a la salida para evitar seleccionar solo supervivientes, un problema documentado por Brown et al. (1992, p. 553).
 
 En mi cartera, EMI4368 pasa de WKWZ a CTOF entre el 15 y el 16 de julio de 2019. El retorno de −2,08 % compara los cierres 45,4380 y 44,4940 USD del mismo emisor. JFAS tuvo un split 3:1 el 9 de septiembre de 2020. Comparar 243,6510 × 3 con 739,2590 USD da −1,12 %, frente a −67,04 % si se ignora el split.
 
@@ -34,7 +34,7 @@ En mi cartera, EMI4368 pasa de WKWZ a CTOF entre el 15 y el 16 de julio de 2019.
 | GARCH | 30 | 0,311 | 0,405 | 8,66 |
 | FHS | 33 | 0,116 | 0,221 | 7,33 |
 
-Como contraste, usé la pérdida cuantílica asimétrica de Gneiting (2011, p. 754, ec. 24). El normal obtuvo 2,777 pb y el histórico 2,781 pb, los dos menores. La diferencia es de 0,004 pb y no se evaluó su significancia. Se esperan 24,81 incumplimientos en esas fechas. GARCH se acerca más al objetivo y es mi principal alternativa si la volatilidad cambia con rapidez. El VaR histórico es más estable en esta muestra, aunque esa estabilidad también implica lentitud ante un cambio de régimen. Recortar la serie en dos fechas mantuvo idénticos los pronósticos anteriores al corte.
+Como contraste, usé la pérdida cuantílica asimétrica de Gneiting (2011, p. 754, ec. 24). El normal obtuvo 2,777 pb y el histórico 2,781 pb, los dos menores. La diferencia es de 0,004 pb y no evalué su significancia. Se esperan 24,81 incumplimientos en esas fechas. GARCH se acerca más al objetivo y es mi principal alternativa si la volatilidad cambia con rapidez. El VaR histórico es más estable en esta muestra, aunque esa estabilidad también implica lentitud ante un cambio de régimen. Con ayuda de Codex, comprobé que recortar la serie en dos fechas mantenía idénticos los pronósticos anteriores al corte.
 
 Sobre el tramo completo de 2.731 pronósticos históricos hubo 33 incumplimientos, con p de Kupiec de 0,289 y p de cobertura condicional de 0,410. El VaR histórico de muestra es 2,179 % y su ES es 2,817 %. El Z2 de 0,296 apunta a subestimación de la severidad de cola en el backtest histórico. Es una medida del ES y no un p-valor del VaR.
 
