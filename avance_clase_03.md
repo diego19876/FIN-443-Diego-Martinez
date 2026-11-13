@@ -30,3 +30,5 @@ Se preparó un informe de dos páginas con referencias citadas en contexto. Los 
 ## Revisión con la pauta del propio Desafío 3 — 13-11-2026
 
 Se compararon los ocho grupos de pesos y las nueve filas de métricas con la pauta del profesor, a rf anual de 5 % y 3 %. La diferencia máxima observada entre las soluciones fue 3,34e-12. Se mejoró la pieza propia aplicando el factor de split al retorno de la fecha correspondiente, a partir de precios observados, en lugar de reescalar todos los niveles anteriores. La versión nueva reproduce las cifras anteriores y pasó la prueba pública, el contraste NumPy y las pruebas de causalidad de los 48 rebalanceos. La pauta se conserva por separado.
+
+La entrega original de la semana anterior permanece en `desafio3.R`. La revisión propia con la pauta se conserva en `desafio3_corregido.R` y usa los mismos argumentos. Esta revisión sirve como base para el trabajo acumulativo.
