@@ -6,7 +6,7 @@ Repositorio principal: `diego19876/FIN-443-Diego-Martinez`. El Desafío 3 se imp
 
 ## Contexto, pregunta y datos
 
-Trabajo personal de Diego Martinez para FIN443, UAI 2026. La pregunta operativa del Desafío 2 es cómo obtener métricas correctas a partir de precios con formatos, fechas, faltantes y splits distintos. La siguiente etapa compara carteras y su desempeño dentro y fuera de muestra. La pregunta específica del proyecto grupal todavía no ha sido proporcionada: no inventarla.
+Este es mi trabajo personal para FIN443, UAI 2026. La pregunta operativa del Desafío 2 es cómo obtener métricas correctas a partir de precios con formatos, fechas, faltantes y splits distintos. La siguiente etapa compara carteras y su desempeño dentro y fuera de muestra. La pregunta específica del proyecto grupal todavía no ha sido proporcionada: no inventarla.
 
 Los archivos de entrada contienen una fecha en la primera columna y precios diarios por activo en las restantes. Los nombres y el número de activos pueden cambiar. Los CSV originales permanecen locales y sin modificaciones. Los archivos públicos son `precios_desafio2.csv` y `precios_desafio3.csv`. El enunciado completo y las plantillas del Desafío 3 fueron recibidos el 02-11-2026 y utilizados en la implementación.
 
@@ -33,7 +33,7 @@ Desafío 4 y continuidad: `python3 desafio4.py` se ejecuta sin argumentos en la 
 Este AGENTS.md es la fuente única de instrucciones para Codex en el repositorio. Si se incorporan otras IA, mantener el mismo contenido en sus archivos de instrucciones, sin convenciones contradictorias. Registrar cuándo se añadieron estas instrucciones: no atribuir retroactivamente su versión actual a la especificación previa al código.
 
 - En cada tarea de clase completada en este repositorio, actualiza BITACORA_IA.md y avance_clase_XX.md. Registra los pedidos, contribución de IA, cambios, evidencia de verificación, límites y pendientes.
-- No inventes resultados, datos, referencias, pruebas ejecutadas ni decisiones del alumno. Identifica los prompts reconstruidos como resúmenes.
+- No inventes resultados, datos, referencias, pruebas ejecutadas ni decisiones que tomé. Identifica los prompts reconstruidos como resúmenes.
 - Conserva argumentos de terminal y contratos de archivos del enunciado vigente. Usa rutas relativas. No cambies rf a un valor fijo.
 - Mantén la autoría de pautas y pruebas del profesor. Corrige nuestra solución, sin reemplazarla por la pauta.
 - No modifiques los datos originales. No subas datos, resultados CSV ni PDF de clases al repositorio.
