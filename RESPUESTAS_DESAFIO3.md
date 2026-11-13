@@ -34,4 +34,4 @@ Reconstrucción resumida del pedido de esta conversación y del procedimiento de
 
 `entrega_desafio3/desafio3.R`, `entrega_desafio3/informe_desafio3.pdf`, `entrega_desafio3/DeMiguel_2009.pdf`, `entrega_desafio3/Chaves_2012.pdf` y `entrega_desafio3/Ledoit_Wolf_2003.pdf`.
 
-Los archivos del formulario y Webcursos no se han enviado automáticamente. El RUT y el código de sesión los ingresa Diego.
+Ingreso mi RUT y el código de sesión al completar el formulario.
