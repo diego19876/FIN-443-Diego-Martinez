@@ -1,6 +1,6 @@
 # Programación en Finanzas — FIN443, UAI 2026
 
-Repositorio personal de Diego Martinez: código, pautas y avances semanales.
+Este es mi repositorio de FIN443. Aquí reúno mi código, las pautas del profesor y mis avances semanales.
 Repositorio de GitHub: https://github.com/diego19876/FIN-443-Diego-Martinez.
 El repositorio reúne las piezas de los desafíos semanales. El lector del Desafío 4 es la base de datos y retornos para los desafíos 5 y 6.
 Los datos originales, los resultados generados y los PDF de clases permanecen fuera del repositorio.
@@ -25,7 +25,7 @@ Los datos originales, los resultados generados y los PDF de clases permanecen fu
 - `BITACORA_IA.md`: uso de IA, prompts reconstruidos, decisiones, verificaciones y pendientes; incluye el prompt general para continuar.
 - `AGENTS.md`: instrucciones para mantener la bitácora al trabajar en el repositorio.
 
-Las pautas y pruebas del profesor se conservan como referencia, con su autoría. La solución propia se mantiene por separado. Se utilizó OpenAI Codex para elaborar y revisar el código.
+Conservo las pautas y pruebas del profesor como referencia y respeto su autoría. Mantengo mis soluciones en archivos separados. Usé OpenAI Codex para elaborar y revisar el código.
 
 ## Ejecutar el desafío 2
 
