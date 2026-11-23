@@ -4,6 +4,85 @@ Lee README.md, BITACORA_IA.md y los avances antes de modificar el código.
 
 Repositorio principal: `diego19876/FIN-443-Diego-Martinez`. El Desafío 3 se implementará aquí. Esta decisión reemplaza la solicitud anterior de crear un repositorio separado.
 
+## Procedimiento operativo del proyecto — profundizado el 23-11-2026
+
+Esta sección convierte los aprendizajes documentados de D2–D5 y Clase 6 en un procedimiento para tareas nuevas. Es una instrucción de trabajo del usuario, no una exigencia atribuida al profesor ni evidencia de que ya se aplicó en entregas anteriores. Complementa los contratos particulares y las secciones de revisión y cierre de este archivo. El prompt histórico se conserva íntegro.
+
+### 1. Reconstruir la tarea antes de programar
+
+- Identificar qué se pide ahora: ejercicio de sala, desafío completo, corrección, defensa, publicación o envío. Conservar los objetivos anteriores que sigan vigentes e incorporar la última corrección del usuario. No convertir una tarea de un bloque en todo el desafío ni extenderla a otro ramo.
+- Consultar README, la bitácora y los avances pertinentes. Resolver el estado actual por la evidencia más reciente: una auditoría inicial con referencias o video pendientes no invalida su confirmación posterior. No confiar solamente en recuerdos, títulos o resúmenes si el archivo actual está disponible.
+- Leer la consigna exacta y la rúbrica vigente. Registrar archivo, versión o fecha, página PDF y número de lámina; conservar la diferencia entre página física y paginación impresa. Las diapositivas generales, una plantilla incompleta o un test de propiedades pueden no contener el contrato completo.
+- Revisar el feedback disponible de la persona y entrega correctas. No inventarlo si falta, ni bloquear un ejercicio de sala por un Excel que no necesita para resolverse. Transformar cada observación aplicable en una comprobación concreta.
+- Distinguir tres fuentes de decisiones: requisito escrito del profesor, preferencia del usuario y elección técnica propia. Documentar discrepancias; no atribuir una recomendación propia a la pauta. Aplicar las preferencias de presentación compatibles con el contrato, sin ocultar incumplimientos académicos.
+- Inventariar los insumos necesarios: nombre, esquema, procedencia, versión e identidad asignada cuando corresponda. Cotejar la cartera con la asignación oficial si la tarea la utiliza. Nunca sustituirla por otra para obtener mejores cifras.
+- Preparar una lista breve de requisitos con evidencia esperada. Si falta algo, avanzar con lo independiente y señalar el faltante concreto. Preguntar únicamente por decisiones o información indispensables que no puedan resolverse con las fuentes disponibles.
+
+### 2. Fijar convenciones y eliminar ambigüedades
+
+- Antes del cálculo, fijar columnas y unidades, moneda, calendario, período, fecha de disponibilidad, universo, ventana, objetivo de estimación, referencia y formato de salida. Cada valor fijo debe proceder de la consigna o identificarse como supuesto; los resultados se calculan, no se codifican manualmente.
+- Verificar separadores, coma decimal, porcentajes frente a fracciones y puntos básicos en los archivos reales. Leer notas y convenciones por fila. Una regla de magnitud usada con un proveedor no se convierte en regla universal para otro.
+- Ante notaciones como `3,000`, identificar la interpretación con la fuente y declararla. Si sigue siendo materialmente ambigua, informar ambas interpretaciones y pedir aclaración cuando sea necesaria. Nunca escoger la que mejore el resultado fuera de muestra. Una sensibilidad explicativa no cambia el parámetro oficial.
+- Precisar las convenciones que cambian cifras: ddof, tipo de cuantil, anualización, días hábiles o calendario, inicialización, inclusión de extremos, intercepto penalizado o no, suma frente a media de errores, escala de vega, horizonte de sigma y promedio de referencia de R². Usar la especificación vigente sobre supuestos preliminares de clase.
+- Si llega el contrato detallado después de un avance, cotejarlo punto por punto y registrar qué supuestos reemplaza. Conservar el avance como historia y actualizar las conclusiones y archivos vigentes.
+
+### 3. Implementar una solución reproducible y temporalmente válida
+
+- Mantener el ejecutable oficial autónomo y con la interfaz pedida. Separar cálculos y presentación cuando ayude a comprobarlos; no crear arquitecturas o dependencias innecesarias. Reutilizar el lector validado, revisando su adecuación al nuevo problema.
+- Reconstruir primero los datos con las reglas oficiales: versiones, vigencias, calendarios, FX disponible, acciones corporativas, salidas y faltantes. Validar la continuidad por emisor al cambiar ticker o bolsa. Conservar los originales y sus hashes cuando se prepare evidencia.
+- No eliminar filas, imputar precios, ordenar días o añadir rezagos por conveniencia sin comprobar qué exige la tarea. Si una entrada viola el contrato, fallar con un mensaje concreto; no reparar silenciosamente una condición que altere la interpretación.
+- Para cualquier pronóstico, especificar cuándo se conoce cada dato, cuándo se estima y cuándo se aplica. Separar explicar un retorno observado de pronosticar uno no observado. No usar una serie final revisada como si hubiera estado disponible en tiempo real.
+- Separar entrenamiento, validación y prueba cuando se soliciten. Si el ejercicio fija dos muestras y un parámetro, respetarlo sin inventar una selección adicional. Estandarización, filtros y estimación solo pueden usar la información admitida en esa etapa; conservar los coeficientes fijos si así se exige.
+- Un experimento solicitado con fuga de información debe quedar identificado como demostración del sesgo. Su R² alto no justifica recomendar su uso real. Si faltan fechas de publicación, distinguir la explicación de la clase de una verificación empírica que el CSV no permite.
+- Conservar semillas, tamaño de simulación y método de error estándar. Para pares antitéticos, calcular la incertidumbre con la unidad de muestreo correcta. No modificar una semilla para conseguir que un test pase.
+
+### 4. Validar por capas y con independencia real
+
+Aplicar las capas pertinentes al alcance de la tarea, conservando el requisito de prueba integral para código financiero nuevo o modificado. Una tarea documental o de nombres de archivos no requiere repetir cálculos ya verificados si sus dependencias no cambiaron.
+
+| Capa | Qué comprobar | Qué no permite afirmar |
+| --- | --- | --- |
+| Contrato | Ejecución limpia, interfaz, archivos, esquema, orden, tipos, finitud y tiempo | Que las cifras sean correctas |
+| Datos | Lector desde CSV originales, transformaciones y conteos con casos conocidos | Que un oráculo sobre la misma serie valide también el lector |
+| Cálculo | Otro método o implementación, unidades y tolerancias explícitas | Que copiar la fórmula o importar la función sea independiente |
+| Casos alternativos | Ejecutable completo con entradas sintéticas y parámetros distintos | Que se hayan visto o aprobado datos ocultos |
+| Entrega | Mismo código probado, cifras y anexos consistentes, archivos accesibles | Que ya se haya enviado o registrado en la plataforma |
+
+- Ejecutar la prueba pública literal cuando esté disponible. Si solo se ejecutó una adaptación o propiedades equivalentes, nombrarlas así; conservar la autoría y registrar cualquier diferencia de entorno.
+- El contraste independiente debe cubrir el punto que se afirma validar. R aplicado a series exportadas contrasta las métricas; para afirmar validación integral, reconstruir también las series desde los CSV con lógica independiente. Dos lenguajes pueden compartir el mismo error de supuesto: revisar además casos conocidos y convenciones.
+- Elegir casos relevantes para cada tarea: faltantes iniciales, duplicados, splits, cambios de bolsa, calendario y FX en lectores; casos límite de opciones y bonos; colinealidad o señales constantes en regresión cuando corresponda. Variar parámetros exigidos sin reemplazar la cartera real.
+- Usar pruebas de invariancia pertinentes: cambios solo posteriores al corte no deben modificar cálculos del pasado; cambios de orden solo deben ser invariantes si el contrato permite ordenar; cambios de escala en MCO no deberían alterar predicciones salvo problemas numéricos. No exigir invariancia a un resultado que usa deliberadamente los datos modificados.
+- Definir tolerancia absoluta, relativa o estadística antes de interpretar diferencias. No confundir igualdad de bytes con equivalencia numérica ni agrandar una tolerancia para esconder un fallo. En Monte Carlo, distinguir coincidencia de una secuencia y concordancia estadística entre lenguajes.
+- Conservar entradas, salidas, comandos, logs, versiones, tiempos, tolerancias y hash del ejecutable probado. Registrar fallos y su causa real. Un error de TLS, espacio, dependencia o arranque de kernel no acredita un error financiero ni una ejecución exitosa.
+- Después de un cambio, repetir las verificaciones afectadas y las integrales necesarias. No repetir pruebas ya concluyentes por rutina si nada cambió. No anunciar un test como aprobado por haberlo creado o por inspeccionar su código.
+
+### 5. Redactar desde resultados y auditar cada aparición numérica
+
+- Generar primero las salidas y después el correo, memo, resumen y guion. Construir tablas y números de texto desde las salidas verificadas; redondear solamente al presentar. Ninguna cifra se completa de memoria para que el relato cierre.
+- Mantener una matriz por dato con origen, variable, transformación, unidad, valor sin redondear, valor mostrado, archivo de salida, rango principal del código final y verificación. Cubrir cada celda de tabla y cada repetición numérica en el texto. Los parámetros dados y los identificadores documentales deben identificarse como tales.
+- Conservar el hash de la versión a la que corresponden las líneas. Un rango debe permitir entender el cálculo, no señalar únicamente la asignación o exportación. Para notebook, indicar celda y líneas, además del ejecutable cuando exista.
+- Tras redactar, extraer o recorrer nuevamente todas las cifras y cotejar cada aparición con la matriz, incluida su escala y signo. Revisar tablas cortadas, encabezados ambiguos, unidades y diferencias entre valor exacto y redondeado. Inspeccionar visualmente el PDF o artefacto final.
+- Si se modifica un supuesto, una fuente o una fórmula, identificar qué salidas, tablas, conclusiones, rangos, notebook, correo, guion y ZIP dependen de ese cambio. Regenerar los afectados; una corrección local no actualiza automáticamente una copia publicada.
+- Vincular la recomendación con evidencia y condiciones: qué se gana, cuánto cuesta, qué riesgo persiste y qué alternativa se compara. Distinguir rendimiento observado, evidencia estadística y decisión para el futuro. No convertir un resultado pequeño o un p-valor aislado en una garantía.
+- Explicar en español natural y acorde al destinatario. En defensa, el estudiante debe poder explicar dato de entrada, transformación, resultado e implicancia sin leer código línea por línea. El guion ayuda a comprender; no acredita dominio ni sustituye la grabación personal.
+
+### 6. Referencias, acciones externas y cierre académico
+
+- Aplicar las verificaciones documentales y de exclusividad de las secciones siguientes. Seleccionar referencias pertinentes a una decisión del trabajo, no solo a palabras del tema. Una candidatura no se presenta como referencia verificada.
+- Mantener separados: metadatos Crossref correctos, PDF real y legible, cita exacta en su página, cuartil con año y categoría, no repetición y registro efectivo en el foro. Ninguna comprobación sustituye las otras; una búsqueda sin resultados no garantiza exclusividad absoluta.
+- Preparar textos y adjuntos completos antes de una acción externa autorizada. La autorización para actualizar GitHub no autoriza correos, foro o envío de tarea; la de registrar artículos no autoriza entregar el desafío. No pedir de nuevo una autorización que ya cubra la acción vigente.
+- La revisión final compara la carpeta con el enunciado de esa entrega: nombres, cantidades, formatos, extensiones, accesos, anexos y límites. No trasladar automáticamente los trece archivos ni las reglas particulares del D5 a otra actividad.
+- Informar el estado exacto y su evidencia: preparado, ejecutado, contrastado, registrado, accesible o enviado. Si el envío es requisito y no está autorizado o confirmado, dejarlo como pendiente explícito. Nunca garantizar nota máxima o aprobación de archivos ocultos.
+
+### 7. Publicación, continuidad y registro de aprendizaje
+
+- Revisar estado Git y contenido remoto antes de publicar. Usar una lista explícita de archivos; no incluir cambios ajenos mediante `git add .`. Conservar las ediciones remotas y locales del usuario y publicar sobre la última versión confirmada, sin sobrescrituras forzadas.
+- En un repositorio público, revisar identificadores, RUT, datos, cartera, enlaces personales, credenciales, resultados y entregables. Mantener el registro local íntegro y omitir datos sensibles en la copia pública, dejando constancia de la omisión sin atribuirle literalidad completa.
+- Verificar el commit y la rama remotos después de publicar. Si se usa la conexión GitHub en lugar de Git local, explicitarlo en la bitácora; no afirmar que el checkout local quedó sincronizado, ni alterar su índice o historia para simularlo.
+- Al cerrar cada tarea, registrar solicitud literal disponible o resumen identificado, aportes de IA, decisiones del estudiante efectivamente recibidas, cambios, evidencia y límites. Guardar los fallos corregidos sin inventar una cronología ni atribuir decisiones al estudiante por inferencia.
+- Convertir errores y aclaraciones recurrentes en reglas específicas con fecha y justificación. Distinguir lo ya aplicado de una mejora nueva. Mantener contratos y versiones anteriores identificados; no reescribir la historia para que parezca que la regla siempre existió.
+- Cerrar con el resultado principal, lo cambiado y la evidencia necesaria, más los pendientes reales. Entregar los archivos o el texto solicitado en la misma respuesta; una actualización de documentación no sustituye un correo o adjunto que siga pendiente de proporcionar.
+
 ## Contexto, pregunta y datos
 
 Este es mi trabajo personal para FIN443, UAI 2026. La pregunta operativa del Desafío 2 es cómo obtener métricas correctas a partir de precios con formatos, fechas, faltantes y splits distintos. La siguiente etapa compara carteras y su desempeño dentro y fuera de muestra. La pregunta específica del proyecto grupal todavía no ha sido proporcionada: no inventarla.
